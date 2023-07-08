@@ -1,0 +1,40 @@
+static_library("smartCar_demo") {
+  sources = [
+    "./task/oled_show_task.c",
+    "./task/uart_recv_task.c",
+    "./task/udp_recv_task.c",
+    "./task/udp_send_task.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc/NT3H.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef/ndef.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef/rtd/nfcForum.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef/rtd/rtdText.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef/rtd/rtdUri.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_ap3216c.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_aw2013.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_key.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_nfc.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_nfc_to_wifi.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_pcf8574.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_ssd1306.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_ssd1306_bmps.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/hal_bsp_wifi.c",
+    "//vendor/hqyj/fs_hi3861/common/bsp/src/oled_show_log.c",
+    "smartCar_demo.c",
+  ]
+  cflags = [ "-Wno-unused-variable" ]
+  cflags += [ "-Wno-unused-but-set-variable" ]
+  cflags += [ "-Wno-unused-parameter" ]
+  include_dirs = [
+    "./task",
+    "./function",
+    "//utils/native/lite/include",
+    "//kernel/liteos_m/kal/cmsis",
+    "//base/iot_hardware/peripheral/interfaces/kits",
+    "//foundation/communication/wifi_lite/interfaces/wifiservice",
+    "//vendor/hqyj/fs_hi3861/common/bsp/include",
+    "//third_party/cJSON",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc/ndef/rtd/",
+    "//vendor/hqyj/fs_hi3861/common/bsp/nfc",
+  ]
+}
